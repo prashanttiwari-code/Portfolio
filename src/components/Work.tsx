@@ -1,38 +1,40 @@
 import { useState, useCallback } from "react";
-import "./styles/Work.css";
+import "./styles/Work1.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    title: "Sales Performance Dashboard",
+    category: "Data Analytics",
+    tools: "Power BI, MS Excel, DAX, Data Cleaning, Data Visualization",
+    image: "/images/PowerBi Dashboard Page 1.png",
   },
   {
-    title: "Radix",
+    title: "Parallax X",
+    category: "Web Project",
+    tools: "HTML, CSS, JavaScript, Figma, Canva",
+    image: "/images/PX.png",
+  },
+  {
+    title: "Bitwise Learn UI",
+    category: "EdTech Platform",
+    tools:
+      "Figma, Wireframing, Prototyping, Component Design, Auto Layout, Design System",
+    image: "/images/Bitwise.png",
+  },
+  {
+    title: "Bookstore Database Analysis",
     category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    tools: "MySQL, Microsoft Excel, SQL Queries, Data Analysis",
+    image: "/images/bookstore.png",
   },
   {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
-  },
-  {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
-  },
-  {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
+    title: "Aipanart UI",
+    category: "E-Commerce",
+    tools:
+      "Figma, Wireframing, Prototyping, Component Design, Auto Layout, Design System",
+    image: "/images/Aipanart.png",
   },
 ];
 
@@ -63,32 +65,31 @@ const Work = () => {
   }, [currentIndex, goToSlide]);
 
   return (
-    <div className="work-section" id="work">
+    <section className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
           My <span>Work</span>
         </h2>
 
         <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
+          {/* Arrows */}
           <button
             className="carousel-arrow carousel-arrow-left"
             onClick={goToPrev}
             aria-label="Previous project"
-            data-cursor="disable"
           >
             <MdArrowBack />
           </button>
+
           <button
             className="carousel-arrow carousel-arrow-right"
             onClick={goToNext}
             aria-label="Next project"
-            data-cursor="disable"
           >
             <MdArrowForward />
           </button>
 
-          {/* Slides */}
+          {/* Carousel */}
           <div className="carousel-track-container">
             <div
               className="carousel-track"
@@ -99,46 +100,59 @@ const Work = () => {
               {projects.map((project, index) => (
                 <div className="carousel-slide" key={index}>
                   <div className="carousel-content">
+                    
+                    {/* Left Info */}
                     <div className="carousel-info">
                       <div className="carousel-number">
                         <h3>0{index + 1}</h3>
                       </div>
+
                       <div className="carousel-details">
                         <h4>{project.title}</h4>
+
                         <p className="carousel-category">
                           {project.category}
                         </p>
+
                         <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
+                          <span className="tools-label">
+                            Tools & Features
+                          </span>
                           <p>{project.tools}</p>
                         </div>
                       </div>
                     </div>
+
+                    {/* Right Image */}
                     <div className="carousel-image-wrapper">
-                      <WorkImage image={project.image} alt={project.title} />
+                      <WorkImage
+                        image={project.image}
+                        alt={project.title}
+                      />
                     </div>
+
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Dot Indicators */}
+          {/* Dots */}
           <div className="carousel-dots">
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
+                className={`carousel-dot ${
+                  index === currentIndex ? "carousel-dot-active" : ""
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
-                data-cursor="disable"
               />
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

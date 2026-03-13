@@ -6,11 +6,12 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Full Stack Developer with 4+ years of experience building scalable web
-          applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
-          in microservices architecture, CMS development, and low-code platforms.
-          Passionate about creating high-performance, production-ready solutions
-          from concept to deployment.
+         Hi, I’m Prashant Tiwari, data enthusiast with a strong foundation in 
+         SQL, Excel, and data analysis, along with hands-on experience as a UI/UX designer. 
+         I enjoy working with raw data—cleaning it, analyzing patterns, and turning it 
+         into meaningful insights through dashboards and reports.I’ve worked on projects 
+         involving data cleaning, pivot tables, and SQL queries, and I have also designed 
+         100+ UI/UX pages in Figma, focusing on user-centric design, clean layouts, and usability.
         </p>
       </div>
     </div>
